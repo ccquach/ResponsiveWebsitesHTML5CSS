@@ -105,10 +105,22 @@ $(document).ready(function() {
   });
 
   /* Mobile nav */
-  $('.js--nav-icon').click(function() {
+  $('.js--nav-icon, .logo-black, .logo, .js--main-nav li a').click(function(e) {
     var nav = $('.js--main-nav');
     var icon = $('.js--nav-icon i');
-    nav.slideToggle(200);
+    var clicked = e.target.className;
+
+    // Exit function if menu closed and black logo clicked
+    if (
+      icon.hasClass('ion-ios-menu') &&
+      (clicked === 'logo-black' || clicked === 'logo')
+    )
+      return;
+
+    // Open and close menu
+    if ($(window).width() < 768) nav.slideToggle(200);
+
+    // Change menu button icon state
     if (icon.hasClass('ion-ios-menu')) {
       icon.addClass('ion-ios-close');
       icon.removeClass('ion-ios-menu');
@@ -121,9 +133,12 @@ $(document).ready(function() {
   $(window).resize(function() {
     var nav = $('.js--main-nav');
     var icon = $('.js--nav-icon i');
+
+    // Toggle main nav display based on window size
     if ($(window).width() > 767) {
       nav.css('display', 'block');
     } else {
+      // Mobile nav starts out closed
       nav.css('display', 'none');
       icon.addClass('ion-ios-menu');
       icon.removeClass('ion-ios-close');
