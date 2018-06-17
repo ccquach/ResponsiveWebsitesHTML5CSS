@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	/* Sticky navigation */
-	var waypoint = new Waypoint({
+	new Waypoint({
 		element: $('.js--section-features'),
 		handler: function (direction) {
 			direction === 'down' ?
@@ -72,28 +72,28 @@ $(document).ready(function () {
 		});
 
 	/* Animations on scroll */
-	var waypoint = new Waypoint({
+	new Waypoint({
 		element: $('.js--wp-1'),
 		handler: function (direction) {
 			$('.js--wp-1').addClass('animated fadeIn');
 		},
 		offset: '50%'
 	});
-	var waypoint = new Waypoint({
+	new Waypoint({
 		element: $('.js--wp-2'),
 		handler: function (direction) {
 			$('.js--wp-2').addClass('animated fadeInUp');
 		},
 		offset: '50%'
 	});
-	var waypoint = new Waypoint({
+	new Waypoint({
 		element: $('.js--wp-3'),
 		handler: function (direction) {
 			$('.js--wp-3').addClass('animated fadeIn');
 		},
 		offset: '50%'
 	});
-	var waypoint = new Waypoint({
+	new Waypoint({
 		element: $('.js--wp-4'),
 		handler: function (direction) {
 			$('.js--wp-4').addClass('animated pulse');
@@ -141,6 +141,23 @@ $(document).ready(function () {
 			nav.css('display', 'none');
 			icon.addClass('ion-ios-menu');
 			icon.removeClass('ion-ios-close');
+		}
+	});
+
+	/* Maps */
+	var map = new GMaps({
+		div: '.map',
+		lat: 38.7437396,
+		lng: -9.15,
+		zoom: 12
+	});
+
+	map.addMarker({
+		lat: 38.7437396,
+		lng: -9.230244,
+		title: 'Lisbon',
+		infoWindow: {
+			content: '<p>Our Lisbon HQ</p>'
 		}
 	});
 });
