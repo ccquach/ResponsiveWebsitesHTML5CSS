@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="./vendors/css/grid.css">
 	<link rel="stylesheet" href="./vendors/css/ionicons.min.css">
 	<link rel="stylesheet" href="./vendors/css/animate.min.css">
-	<link rel="stylesheet" href="./resources/css/style.css">
+	<link rel="stylesheet" href="./resources/css/style.min.css">
 	<link rel="stylesheet" href="./resources/css/queries.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
 	<title>Omnifood</title>
